@@ -1,0 +1,17 @@
+{
+  "name": "ferreteria-api",
+  "version": "1.0.0",
+  "description": "API RESTful para la gestión de una ferretería (Node.js + Express + MySQL)",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "mysql2": "^3.11.5"
+  }
+}

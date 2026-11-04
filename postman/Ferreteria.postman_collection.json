@@ -1,0 +1,77 @@
+{
+  "info": {
+    "name": "Ferretería API",
+    "description": "Pruebas de la API RESTful de la ferretería. Cambia la variable baseUrl por la IP del servidor (ej. http://192.168.1.10:3000).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:3000" }
+  ],
+  "item": [
+    {
+      "name": "Categorías",
+      "item": [
+        { "name": "Listar categorías", "request": { "method": "GET", "url": "{{baseUrl}}/api/categorias" } },
+        { "name": "Obtener categoría", "request": { "method": "GET", "url": "{{baseUrl}}/api/categorias/1" } },
+        { "name": "Productos de una categoría", "request": { "method": "GET", "url": "{{baseUrl}}/api/categorias/1/productos" } },
+        {
+          "name": "Crear categoría",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Jardinería\",\n  \"descripcion\": \"Palas, mangueras y tijeras de podar\"\n}" },
+            "url": "{{baseUrl}}/api/categorias"
+          }
+        },
+        {
+          "name": "Actualizar categoría",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Jardinería y exteriores\",\n  \"descripcion\": \"Herramientas para jardín\"\n}" },
+            "url": "{{baseUrl}}/api/categorias/6"
+          }
+        },
+        { "name": "Eliminar categoría", "request": { "method": "DELETE", "url": "{{baseUrl}}/api/categorias/6" } },
+        { "name": "Eliminar categoría con productos (409)", "request": { "method": "DELETE", "url": "{{baseUrl}}/api/categorias/1" } }
+      ]
+    },
+    {
+      "name": "Productos",
+      "item": [
+        { "name": "Listar productos", "request": { "method": "GET", "url": "{{baseUrl}}/api/productos" } },
+        { "name": "Buscar productos", "request": { "method": "GET", "url": "{{baseUrl}}/api/productos?buscar=llave" } },
+        { "name": "Filtrar por categoría", "request": { "method": "GET", "url": "{{baseUrl}}/api/productos?categoria=2" } },
+        { "name": "Obtener producto", "request": { "method": "GET", "url": "{{baseUrl}}/api/productos/1" } },
+        {
+          "name": "Crear producto",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Alicate universal 8\\\"\",\n  \"descripcion\": \"Mango aislado\",\n  \"precio\": 55.0,\n  \"stock\": 20,\n  \"id_categoria\": 1\n}" },
+            "url": "{{baseUrl}}/api/productos"
+          }
+        },
+        {
+          "name": "Actualizar producto",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Martillo de carpintero 16 oz\",\n  \"descripcion\": \"Mango de fibra de vidrio\",\n  \"precio\": 70.0,\n  \"stock\": 35,\n  \"id_categoria\": 1\n}" },
+            "url": "{{baseUrl}}/api/productos/1"
+          }
+        },
+        {
+          "name": "Crear producto inválido (400)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"\",\n  \"precio\": -5,\n  \"stock\": 1.5\n}" },
+            "url": "{{baseUrl}}/api/productos"
+          }
+        },
+        { "name": "Eliminar producto", "request": { "method": "DELETE", "url": "{{baseUrl}}/api/productos/12" } }
+      ]
+    }
+  ]
+}
