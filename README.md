@@ -140,6 +140,10 @@ Funciones: listar, buscar y filtrar productos por categoría, registrar/editar e
    ```
 4. Escanear el código QR con Expo Go (celular y PC en la misma Wi-Fi).
 
+> **iPhone:** Expo Go pide tener sesión iniciada con la misma cuenta de Expo en el celular y en la PC.
+> Si `npx expo login` falla, crear un *Access token* personal en expo.dev (Settings → Access tokens) y antes de iniciar ejecutar:
+> `set EXPO_TOKEN=<token>` (Windows) y luego `npx expo start`. No subir el token al repositorio.
+
 Funciones: lista de productos con búsqueda, tarjetas con categoría y stock, alta/edición en hoja inferior con selector de categoría, eliminación con confirmación, *pull-to-refresh*; CRUD completo de categorías.
 
 ---
@@ -162,7 +166,7 @@ Funciones: lista de productos con búsqueda, tarjetas con categoría y stock, al
 
 | Integrante | Responsabilidades |
 |---|---|
-| **David Bustos** | Base de datos MySQL, API RESTful (Node + Express), colección de Postman |
-| **Estudiante 2** | Frontend web (React), app móvil (React Native / Expo) |
+| **Compañero (nombre)** | Base de datos MySQL, API RESTful (Node + Express), colección de Postman |
+| **David Bustos** | Frontend web (React), app móvil (React Native / Expo) |
 
 Ambos: pruebas integradas en red local y documentación.
