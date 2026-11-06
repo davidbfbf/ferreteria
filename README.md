@@ -166,7 +166,7 @@ Funciones: lista de productos con búsqueda, tarjetas con categoría y stock, al
 
 | Integrante | Responsabilidades |
 |---|---|
-| **Compañero (nombre)** | Base de datos MySQL, API RESTful (Node + Express), colección de Postman |
+| **Santiago Bohorquez** | Base de datos MySQL, API RESTful (Node + Express), colección de Postman |
 | **David Bustos** | Frontend web (React), app móvil (React Native / Expo) |
 
 Ambos: pruebas integradas en red local y documentación.
